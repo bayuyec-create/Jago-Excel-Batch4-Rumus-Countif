@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografis Interaktif: Fungsi Excel SUMIF & COUNTIF</title>
+    <title>Infografis Interaktif: Fungsi Excel SUMIF, COUNTIF & AVERAGEIF</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,6 +57,20 @@
             color: #e11d48;
             font-weight: 600;
         }
+         .scrollable-area::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollable-area::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .scrollable-area::-webkit-scrollbar-thumb {
+            background: #a8a8a8;
+            border-radius: 10px;
+        }
+        .scrollable-area::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
     </style>
 </head>
 <body class="text-[#073B4C]">
@@ -65,42 +79,58 @@
 
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-bold text-[#073B4C] mb-2">Belajar Excel Jadi Gampang!</h1>
-            <p class="text-lg md:text-xl text-[#118AB2]">Infografis Interaktif Penjumlah & Penghitung Bersarat</p>
+            <p class="text-lg md:text-xl text-[#118AB2]">Infografis Interaktif Penjumlah, Penghitung & Perata-rata Bersarat</p>
         </header>
 
         <section class="bg-white rounded-lg shadow-lg p-6 mb-12">
             <h2 class="text-3xl font-bold text-center mb-6">Kenalan Dulu Sama Jagoan Kita!</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
                 <div>
                     <h3 class="text-xl font-bold text-[#118AB2]">1. COUNTIF</h3>
-                    <p>Fungsi ini untuk menghitung ada berapa banyak data yang sama berdasarkan satu syarat.</p>
+                    <p>Menghitung banyak data dengan satu syarat.</p>
                     <div class="syntax-box">
                         <p class="syntax-code">=COUNTIF(range, criteria)</p>
-                        <p class="mt-1 text-gray-600 text-sm"><strong>range:</strong> Area data yang mau dicek.<br><strong>criteria:</strong> Syarat yang kamu cari.</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>range:</strong> Area data yang mau kamu hitung.<br><strong>criteria:</strong> Syarat yang harus dipenuhi.</p>
                     </div>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold text-[#118AB2]">2. SUMIF</h3>
-                    <p>Fungsi ini menjumlahkan angka di satu kolom, jika data di kolom lain memenuhi satu syarat.</p>
+                    <p>Menjumlahkan angka dengan satu syarat.</p>
                     <div class="syntax-box">
                         <p class="syntax-code">=SUMIF(range, criteria, sum_range)</p>
-                        <p class="mt-1 text-gray-600 text-sm"><strong>range:</strong> Area untuk syarat.<br><strong>criteria:</strong> Syarat yang dicari.<br><strong>sum_range:</strong> Area yang angkanya mau dijumlahkan.</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>range:</strong> Area untuk mengecek syarat.<br><strong>criteria:</strong> Syarat yang kamu tentukan.<br><strong>sum_range:</strong> Area berisi angka yang mau dijumlahkan.</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-bold text-[#118AB2]">3. AVERAGEIF</h3>
+                    <p>Mencari rata-rata angka dengan satu syarat.</p>
+                    <div class="syntax-box">
+                        <p class="syntax-code">=AVERAGEIF(range, criteria, average_range)</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>range:</strong> Area untuk mengecek syarat.<br><strong>criteria:</strong> Syarat yang kamu tentukan.<br><strong>average_range:</strong> Area berisi angka yang mau dirata-rata.</p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-[#118AB2]">3. COUNTIFS</h3>
-                    <p>Sama seperti COUNTIF, tapi bisa pakai banyak syarat sekaligus. Semua syarat harus terpenuhi.</p>
+                    <h3 class="text-xl font-bold text-[#118AB2]">4. COUNTIFS</h3>
+                    <p>Menghitung banyak data dengan banyak syarat.</p>
                     <div class="syntax-box">
                         <p class="syntax-code">=COUNTIFS(range1, criteria1, ...)</p>
-                        <p class="mt-1 text-gray-600 text-sm"><strong>range1:</strong> Area syarat ke-1.<br><strong>criteria1:</strong> Syarat ke-1, dan seterusnya.</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>range1:</strong> Area syarat pertama.<br><strong>criteria1:</strong> Syarat pertama.<br><strong>...:</strong> Lanjutkan pasangan area & syarat berikutnya.</p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold text-[#118AB2]">4. SUMIFS</h3>
-                    <p>Versi canggih dari SUMIF. Bisa menjumlahkan angka berdasarkan banyak syarat sekaligus.</p>
+                    <h3 class="text-xl font-bold text-[#118AB2]">5. SUMIFS</h3>
+                    <p>Menjumlahkan angka dengan banyak syarat.</p>
                     <div class="syntax-box">
                         <p class="syntax-code">=SUMIFS(sum_range, range1, criteria1, ...)</p>
-                        <p class="mt-1 text-gray-600 text-sm"><strong>sum_range:</strong> Area yang mau dijumlahkan (wajib di depan!).<br><strong>range1:</strong> Area syarat ke-1, dst.</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>sum_range:</strong> <span class="font-bold">(Perhatian!)</span> Area angka duluan.<br><strong>range1:</strong> Area syarat pertama.<br><strong>criteria1:</strong> Syarat pertama, dst.</p>
+                    </div>
+                </div>
+                 <div>
+                    <h3 class="text-xl font-bold text-[#118AB2]">6. AVERAGEIFS</h3>
+                    <p>Mencari rata-rata angka dengan banyak syarat.</p>
+                    <div class="syntax-box">
+                        <p class="syntax-code">=AVERAGEIFS(average_range, range1, criteria1, ...)</p>
+                        <p class="mt-1 text-gray-600 text-sm"><strong>average_range:</strong> <span class="font-bold">(Perhatian!)</span> Area angka duluan.<br><strong>range1:</strong> Area syarat pertama.<br><strong>criteria1:</strong> Syarat pertama, dst.</p>
                     </div>
                 </div>
             </div>
@@ -121,6 +151,7 @@
                                         <th class="bg-gray-200 font-bold text-center text-gray-600 p-2 border border-gray-300">A</th>
                                         <th class="bg-gray-200 font-bold text-center text-gray-600 p-2 border border-gray-300">B</th>
                                         <th class="bg-gray-200 font-bold text-center text-gray-600 p-2 border border-gray-300">C</th>
+                                        <th class="bg-gray-200 font-bold text-center text-gray-600 p-2 border border-gray-300">D</th>
                                     </tr>
                                 </thead>
                                 <tbody id="salesDataTable" class="text-sm">
@@ -139,7 +170,7 @@
                 <h2 class="text-3xl font-bold text-center mb-2">Area Interaktif: Coba Sendiri!</h2>
                 <p class="text-center text-lg text-gray-600 mb-8">Masukkan kriteria untuk menjawab soal.</p>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 scrollable-area overflow-y-auto h-[500px] pr-4">
                     
                     <div class="bg-white rounded-lg shadow-lg p-6 interactive-card">
                         <h3 class="text-xl font-bold mb-2 text-[#118AB2]">Coba: COUNTIF</h3>
@@ -175,6 +206,25 @@
                             <div>
                                 <p class="text-xs text-gray-500">Rumus yang Kamu Gunakan:</p>
                                 <p id="sumif-formula" class="formula-display text-xs"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 interactive-card">
+                        <h3 class="text-xl font-bold mb-2 text-[#118AB2]">Coba: AVERAGEIF</h3>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Soal:</strong> Berapa rata-rata penjualan (Kg) untuk buah Mangga?</p>
+                        <div class="mb-4">
+                            <label for="averageif-criteria" class="block text-sm font-medium">Kriteria Buah:</label>
+                            <input type="text" id="averageif-criteria" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Mangga'">
+                        </div>
+                        <button id="run-averageif" class="w-full bg-[#FFD166] text-[#073B4C] font-bold py-2 px-4 rounded-lg">Jalankan</button>
+                        <div id="averageif-result-container" class="mt-4 hidden space-y-3">
+                            <div class="result-display p-4 rounded-lg">
+                                <p class="font-bold">Hasil Rata-rata: <span id="averageif-result" class="text-xl"></span> Kg</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Rumus yang Kamu Gunakan:</p>
+                                <p id="averageif-formula" class="formula-display text-xs"></p>
                             </div>
                         </div>
                     </div>
@@ -224,6 +274,56 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg p-6 interactive-card">
+                        <h3 class="text-xl font-bold mb-2 text-[#118AB2]">Coba: AVERAGEIFS</h3>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Soal:</strong> Berapa rata-rata penjualan (Kg) buah Apel yang dijual Budi?</p>
+                         <div class="mb-2">
+                            <label for="averageifs-criteria1" class="block text-sm font-medium">Kriteria Buah:</label>
+                            <input type="text" id="averageifs-criteria1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Apel'">
+                        </div>
+                        <div class="mb-4">
+                            <label for="averageifs-criteria2" class="block text-sm font-medium">Kriteria Penjual:</label>
+                            <input type="text" id="averageifs-criteria2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Budi'">
+                        </div>
+                        <button id="run-averageifs" class="w-full bg-[#FFD166] text-[#073B4C] font-bold py-2 px-4 rounded-lg">Jalankan</button>
+                        <div id="averageifs-result-container" class="mt-4 hidden space-y-3">
+                             <div class="result-display p-4 rounded-lg">
+                                <p class="font-bold">Hasil Rata-rata: <span id="averageifs-result" class="text-xl"></span> Kg</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Rumus yang Kamu Gunakan:</p>
+                                <p id="averageifs-formula" class="formula-display text-xs"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg p-6 interactive-card border-2 border-[#FFD166] sm:col-span-2">
+                        <h3 class="text-xl font-bold mb-2 text-[#118AB2]">⭐ Tantangan: SUMIFS (3 Kriteria)</h3>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Soal:</strong> Berapa total Kg Apel yang dijual oleh Budi di bulan Januari?</p>
+                         <div class="mb-2">
+                            <label for="challenge-sumifs-c1" class="block text-sm font-medium">Kriteria Buah:</label>
+                            <input type="text" id="challenge-sumifs-c1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Apel'">
+                        </div>
+                        <div class="mb-2">
+                            <label for="challenge-sumifs-c2" class="block text-sm font-medium">Kriteria Penjual:</label>
+                            <input type="text" id="challenge-sumifs-c2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Budi'">
+                        </div>
+                        <div class="mb-4">
+                            <label for="challenge-sumifs-c3" class="block text-sm font-medium">Kriteria Bulan:</label>
+                            <input type="text" id="challenge-sumifs-c3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm" placeholder="Ketik 'Januari'">
+                        </div>
+                        <button id="run-challenge-sumifs" class="w-full bg-[#06D6A0] text-white font-bold py-2 px-4 rounded-lg">Jalankan Tantangan</button>
+                        <div id="challenge-sumifs-result-container" class="mt-4 hidden space-y-3">
+                             <div class="result-display p-4 rounded-lg">
+                                <p class="font-bold">Hasil: <span id="challenge-sumifs-result" class="text-xl"></span> Kg</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Rumus yang Kamu Gunakan:</p>
+                                <p id="challenge-sumifs-formula" class="formula-display text-xs"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -245,6 +345,9 @@
                     <div class="flow-box h-full flex items-center justify-center">
                         <p>Menjumlahkan <strong class="text-[#FF6B6B]">NILAI ANGKA</strong></p>
                     </div>
+                     <div class="flow-box h-full flex items-center justify-center">
+                        <p>Mencari <strong class="text-[#4D96FF]">RATA-RATA</strong></p>
+                    </div>
                 </div>
                 <div class="self-center">
                     <div class="flow-arrow hidden md:block">→</div>
@@ -256,6 +359,9 @@
                     </div>
                     <div class="flow-box h-full flex items-center justify-center">
                         <p>1 Syarat? <strong class="text-[#118AB2]">SUMIF</strong><br>Banyak Syarat? <strong class="text-[#118AB2]">SUMIFS</strong></p>
+                    </div>
+                    <div class="flow-box h-full flex items-center justify-center">
+                        <p>1 Syarat? <strong class="text-[#118AB2]">AVERAGEIF</strong><br>Banyak Syarat? <strong class="text-[#118AB2]">AVERAGEIFS</strong></p>
                     </div>
                 </div>
             </div>
@@ -269,13 +375,13 @@
 
     <script>
         const salesData = [
-            { fruit: 'Apel', sold: 10, seller: 'Budi' },
-            { fruit: 'Jeruk', sold: 8, seller: 'Ani' },
-            { fruit: 'Apel', sold: 5, seller: 'Ani' },
-            { fruit: 'Mangga', sold: 12, seller: 'Budi' },
-            { fruit: 'Jeruk', sold: 15, seller: 'Budi' },
-            { fruit: 'Apel', sold: 7, seller: 'Budi' },
-            { fruit: 'Mangga', sold: 9, seller: 'Ani' },
+            { fruit: 'Apel', sold: 10, seller: 'Budi', month: 'Januari' },
+            { fruit: 'Jeruk', sold: 8, seller: 'Ani', month: 'Januari' },
+            { fruit: 'Apel', sold: 5, seller: 'Ani', month: 'Februari' },
+            { fruit: 'Mangga', sold: 12, seller: 'Budi', month: 'Januari' },
+            { fruit: 'Jeruk', sold: 15, seller: 'Budi', month: 'Februari' },
+            { fruit: 'Apel', sold: 7, seller: 'Budi', month: 'Januari' },
+            { fruit: 'Mangga', sold: 9, seller: 'Ani', month: 'Februari' },
         ];
 
         const capitalize = (s) => s && s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
@@ -283,7 +389,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const tableBody = document.getElementById('salesDataTable');
             
-            // Add header row first
             const headerRow = document.createElement('tr');
             headerRow.className = 'bg-gray-100';
             headerRow.innerHTML = `
@@ -291,10 +396,10 @@
                 <td class="font-bold p-2 border border-gray-300">Nama Buah</td>
                 <td class="font-bold p-2 border border-gray-300">Jumlah (Kg)</td>
                 <td class="font-bold p-2 border border-gray-300">Penjual</td>
+                <td class="font-bold p-2 border border-gray-300">Bulan</td>
             `;
             tableBody.appendChild(headerRow);
 
-            // Add data rows
             salesData.forEach((row, index) => {
                 const tr = document.createElement('tr');
                 tr.className = 'bg-white';
@@ -303,11 +408,11 @@
                     <td class="p-2 border border-gray-300">${row.fruit}</td>
                     <td class="p-2 border border-gray-300 text-center">${row.sold}</td>
                     <td class="p-2 border border-gray-300">${row.seller}</td>
+                    <td class="p-2 border border-gray-300">${row.month}</td>
                 `;
                 tableBody.appendChild(tr);
             });
 
-            // Interactive COUNTIF
             document.getElementById('run-countif').addEventListener('click', () => {
                 const criteria = capitalize(document.getElementById('countif-criteria').value.trim());
                 if (!criteria) return;
@@ -317,7 +422,6 @@
                 document.getElementById('countif-result-container').classList.remove('hidden');
             });
 
-            // Interactive SUMIF
             document.getElementById('run-sumif').addEventListener('click', () => {
                 const criteria = capitalize(document.getElementById('sumif-criteria').value.trim());
                 if (!criteria) return;
@@ -327,7 +431,18 @@
                 document.getElementById('sumif-result-container').classList.remove('hidden');
             });
 
-            // Interactive COUNTIFS
+            document.getElementById('run-averageif').addEventListener('click', () => {
+                const criteria = capitalize(document.getElementById('averageif-criteria').value.trim());
+                if (!criteria) return;
+                const filteredData = salesData.filter(d => d.fruit === criteria);
+                const sum = filteredData.reduce((acc, item) => acc + item.sold, 0);
+                const count = filteredData.length;
+                const result = count > 0 ? (sum / count).toFixed(2) : 0;
+                document.getElementById('averageif-result').textContent = result;
+                document.getElementById('averageif-formula').textContent = `=AVERAGEIF(A2:A8, "${criteria}", B2:B8)`;
+                document.getElementById('averageif-result-container').classList.remove('hidden');
+            });
+
             document.getElementById('run-countifs').addEventListener('click', () => {
                 const criteria1 = capitalize(document.getElementById('countifs-criteria1').value.trim());
                 const criteria2 = capitalize(document.getElementById('countifs-criteria2').value.trim());
@@ -338,7 +453,6 @@
                 document.getElementById('countifs-result-container').classList.remove('hidden');
             });
 
-            // Interactive SUMIFS
             document.getElementById('run-sumifs').addEventListener('click', () => {
                 const criteria1 = capitalize(document.getElementById('sumifs-criteria1').value.trim());
                 const criteria2 = capitalize(document.getElementById('sumifs-criteria2').value.trim());
@@ -348,7 +462,34 @@
                 document.getElementById('sumifs-formula').textContent = `=SUMIFS(B2:B8, A2:A8, "${criteria1}", C2:C8, "${criteria2}")`;
                 document.getElementById('sumifs-result-container').classList.remove('hidden');
             });
+
+            document.getElementById('run-averageifs').addEventListener('click', () => {
+                const criteria1 = capitalize(document.getElementById('averageifs-criteria1').value.trim());
+                const criteria2 = capitalize(document.getElementById('averageifs-criteria2').value.trim());
+                if (!criteria1 || !criteria2) return;
+                const filteredData = salesData.filter(d => d.fruit === criteria1 && d.seller === criteria2);
+                const sum = filteredData.reduce((acc, item) => acc + item.sold, 0);
+                const count = filteredData.length;
+                const result = count > 0 ? (sum / count).toFixed(2) : 0;
+                document.getElementById('averageifs-result').textContent = result;
+                document.getElementById('averageifs-formula').textContent = `=AVERAGEIFS(B2:B8, A2:A8, "${criteria1}", C2:C8, "${criteria2}")`;
+                document.getElementById('averageifs-result-container').classList.remove('hidden');
+            });
+
+            document.getElementById('run-challenge-sumifs').addEventListener('click', () => {
+                const c1 = capitalize(document.getElementById('challenge-sumifs-c1').value.trim());
+                const c2 = capitalize(document.getElementById('challenge-sumifs-c2').value.trim());
+                const c3 = capitalize(document.getElementById('challenge-sumifs-c3').value.trim());
+                if (!c1 || !c2 || !c3) return;
+                const result = salesData
+                    .filter(d => d.fruit === c1 && d.seller === c2 && d.month === c3)
+                    .reduce((sum, item) => sum + item.sold, 0);
+                document.getElementById('challenge-sumifs-result').textContent = result;
+                document.getElementById('challenge-sumifs-formula').textContent = `=SUMIFS(B2:B8, A2:A8, "${c1}", C2:C8, "${c2}", D2:D8, "${c3}")`;
+                document.getElementById('challenge-sumifs-result-container').classList.remove('hidden');
+            });
         });
     </script>
 </body>
 </html>
+
